@@ -1,0 +1,23 @@
+{
+    "config": {
+      "*": {
+        "!match": [
+          "wappalyzer"
+        ]
+      }
+    },
+    "hooks": {
+      "PSTMSG": {
+        "event": [
+          "message"
+        ],
+        "function": [
+          "window.postMessage"
+        ]
+      }
+    },
+    "removeHeaders": [
+      "content-security-policy",
+      "x-frame-options"
+    ]
+  }
