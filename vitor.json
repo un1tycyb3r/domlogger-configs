@@ -1,0 +1,83 @@
+{
+    "config": {},
+    "hooks": {
+      "DOM_CLOBBERING": {
+        "attribute": [
+          "document.forms",
+          "document.images",
+          "document.links",
+          "document.all"
+        ],
+        "function": [
+          "document.getElementById",
+          "document.getElementsByName",
+          "document.getElementsByTagName",
+          "document.getElementsByClassName",
+          "document.querySelector",
+          "document.querySelectorAll"
+        ]
+      },
+      "DOM_MODIFICATIONS": {
+        "attribute": [
+          "set:Element.prototype.outerHTML",
+          "set:Element.prototype.innerHTML",
+          "set:Element.prototype.textContent"
+        ],
+        "function": [
+          "Node.prototype.appendChild",
+          "Node.prototype.insertBefore",
+          "Element.prototype.insertAdjacentHTML",
+          "Element.prototype.replaceChild"
+        ]
+      },
+      "MISC": {
+        "class": [
+          "Blob",
+          "DOMParser",
+          "Document"
+        ],
+        "function": [
+          "URL.prorotype.createObjectURL",
+          "DOMParser.prototype.parseFromString",
+          "Document.prototype.parseHTMLUnsafe",
+          "JSON.parse",
+          "JSON.isRawJSON",
+          "JSON.rawJSON"
+        ]
+      },
+      "REGEX": {
+        "class": [
+          "RegExp"
+        ]
+      },
+      "URL_QUERY_HOOKS": {
+        "attribute": [
+          "get:Location.prototype.search",
+          "get:Location.prototype.hash",
+          "get:Location.prototype.href",
+          "get:URL.prototype.search",
+          "get:URL.prototype.searchParams",
+          "get:URL.prototype.hash"
+        ],
+        "function": [
+          "URLSearchParams.prototype.get",
+          "URLSearchParams.prototype.getAll",
+          "URLSearchParams.prototype.has",
+          "URLSearchParams.prototype.toString",
+          "URLSearchParams.prototype.entries",
+          "URLSearchParams.prototype.forEach",
+          "URLSearchParams.prototype.keys",
+          "URLSearchParams.prototype.values"
+        ]
+      },
+      "WINDOW_HOOKS": {
+        "function": [
+          "window.open"
+        ]
+      }
+    },
+    "removeHeaders": [
+      "content-security-policy",
+      "x-frame-options"
+    ]
+  }

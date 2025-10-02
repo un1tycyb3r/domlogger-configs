@@ -1,0 +1,39 @@
+{
+    "config": {
+      "DOM|EVAL|JQUERY|MISC|NAVIGATION|PSTMSG|HPARAM": {
+        "!match": [
+          "metamask",
+          "wappalyzer",
+          "google_tag_manager",
+          "bitwarden",
+          "messenger_awaiter",
+          "grecaptcha"
+        ],
+        "alert": {
+          "notification": false
+        }
+      }
+    },
+    "hooks": {
+      "DOM": {
+        "attribute": [
+          "get:Element.prototype.id"
+        ],
+        "function": [
+          "getElementById",
+          "querySelector",
+          "querySelectionAll"
+        ]
+      },
+      "JQUERY": {
+        "function": [
+          "$",
+          "function:jQuery"
+        ]
+      }
+    },
+    "removeHeaders": [
+      "content-security-policy",
+      "x-frame-options"
+    ]
+  }
